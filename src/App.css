@@ -1,0 +1,659 @@
+/* src/App.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: #fff;
+}
+
+/* TELA DE LOGIN */
+.admin-container {
+  min-height: 100vh;
+  display: flex;
+}
+
+.admin-login {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+}
+
+.admin-login h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #00ffcc;
+}
+
+.admin-login h2 {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #aaa;
+}
+
+.admin-login form {
+  background: #0f0f1a;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 350px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid #00ffcc33;
+}
+
+.admin-login input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background: #1a1a2e;
+  color: #fff;
+  font-size: 16px;
+}
+
+.admin-login input:focus {
+  outline: none;
+  border-color: #00ffcc;
+}
+
+.admin-login button {
+  width: 100%;
+  padding: 12px;
+  background: #00cc66;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.admin-login button:hover {
+  background: #00dd77;
+  transform: scale(1.02);
+}
+
+.admin-login .erro {
+  color: #ff6666;
+  margin-top: 15px;
+  text-align: center;
+}
+
+/* SIDEBAR */
+.admin-sidebar {
+  width: 260px;
+  background: #0a0a12;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #00ffcc33;
+}
+
+.admin-sidebar h2 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #00ffcc;
+}
+
+.admin-sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.admin-sidebar button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: #ccc;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+  text-align: left;
+}
+
+.admin-sidebar button:hover {
+  background: #1a1a2e;
+  color: #fff;
+}
+
+.admin-sidebar button.active {
+  background: #00cc6633;
+  color: #00ffcc;
+  border-left: 3px solid #00ffcc;
+}
+
+.admin-sidebar button:last-child {
+  margin-top: auto;
+  color: #ff6666;
+}
+
+.admin-sidebar button:last-child:hover {
+  background: #ff666633;
+}
+
+/* CONTEÚDO PRINCIPAL */
+.admin-content {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.admin-content h1 {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: #00ffcc;
+}
+
+/* CARDS DO DASHBOARD */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.card {
+  background: #0f0f1a;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid #00ffcc33;
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: #00ffcc;
+}
+
+.card svg {
+  color: #00ffcc;
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  color: #aaa;
+}
+
+/* TABELAS */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #0f0f1a;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #2a2a3a;
+}
+
+th {
+  background: #1a1a2e;
+  color: #00ffcc;
+  font-weight: bold;
+}
+
+td {
+  color: #ddd;
+}
+
+tr:hover {
+  background: #1a1a2e;
+}
+
+/* FORMULÁRIO ADMIN */
+.admin-form {
+  background: #0f0f1a;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 500px;
+  border: 1px solid #00ffcc33;
+}
+
+.admin-form input,
+.admin-form select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background: #1a1a2e;
+  color: #fff;
+  font-size: 16px;
+}
+
+.admin-form input:focus,
+.admin-form select:focus {
+  outline: none;
+  border-color: #00ffcc;
+}
+
+.admin-form button {
+  width: 100%;
+  padding: 12px;
+  background: #00cc66;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.admin-form button:hover {
+  background: #00dd77;
+}
+
+.admin-form .erro {
+  color: #ff6666;
+  margin-top: 15px;
+  text-align: center;
+}
+
+/* Registros Header */
+.registros-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.acoes-header {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-pdf, .btn-excel, .btn-filtro {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: 0.2s;
+}
+
+.btn-pdf {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-pdf:hover {
+  background-color: #c82333;
+}
+
+.btn-excel {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-excel:hover {
+  background-color: #218838;
+}
+
+.btn-filtro {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.btn-filtro:hover {
+  background-color: #138496;
+}
+
+/* Área de Filtros */
+.filtros-area {
+  background: #0f0f1a;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  border: 1px solid #00ffcc33;
+}
+
+.filtros-area h3 {
+  margin-bottom: 1rem;
+  color: #00ffcc;
+  font-size: 1rem;
+}
+
+.filtros-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  align-items: end;
+}
+
+.filtro-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filtro-group label {
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+.filtro-group input,
+.filtro-group select {
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #333;
+  background: #1a1a2e;
+  color: #fff;
+}
+
+.filtro-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-aplicar, .btn-limpar {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: 0.2s;
+}
+
+.btn-aplicar {
+  background-color: #00cc66;
+  color: #000;
+}
+
+.btn-aplicar:hover {
+  background-color: #00dd77;
+}
+
+.btn-limpar {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn-limpar:hover {
+  background-color: #5a6268;
+}
+
+/* Ações na tabela */
+.acoes {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-edit, .btn-delete {
+  padding: 0.3rem 0.6rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.75rem;
+  transition: 0.2s;
+}
+
+.btn-edit {
+  background-color: #ffc107;
+  color: #000;
+}
+
+.btn-edit:hover {
+  background-color: #e0a800;
+}
+
+.btn-delete {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: #c82333;
+}
+
+.table-container {
+  overflow-x: auto;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.table-container table {
+  min-width: 600px;
+}
+
+/* Modal de Edição */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #0f0f1a;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border: 1px solid #00ffcc33;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #2a2a3a;
+}
+
+.modal-header h2 {
+  margin: 0;
+  color: #00ffcc;
+  font-size: 1.3rem;
+}
+
+.modal-close {
+  background: transparent;
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: 0.2s;
+}
+
+.modal-close:hover {
+  color: #ff6666;
+}
+
+.modal-content form {
+  padding: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #ccc;
+  font-size: 0.85rem;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: #1a1a2e;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #00ffcc;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.btn-cancelar {
+  flex: 1;
+  padding: 0.75rem;
+  background: #444;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-cancelar:hover {
+  background: #555;
+}
+
+.btn-salvar {
+  flex: 1;
+  padding: 0.75rem;
+  background: #00cc66;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: 0.2s;
+}
+
+.btn-salvar:hover {
+  background: #00dd77;
+}
+
+/* Mensagens de sucesso/erro */
+.mensagem {
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.mensagem.sucesso {
+  background: #00cc6633;
+  color: #00ffcc;
+  border: 1px solid #00ffcc;
+}
+
+.mensagem.erro {
+  background: #ff666633;
+  color: #ff6666;
+  border: 1px solid #ff6666;
+}
+
+/* Grid de gráficos */
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.chart-card {
+  background: #0f0f1a;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid #00ffcc33;
+  transition: 0.2s;
+}
+
+.chart-card:hover {
+  border-color: #00ffcc;
+}
+
+.chart-card h3 {
+  margin-bottom: 1rem;
+  color: #00ffcc;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* Ranking List */
+.ranking-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.ranking-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem;
+  background: #1a1a2e;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+.ranking-item:hover {
+  background: #2a2a3a;
+}
+
+.ranking-position {
+  font-weight: bold;
+  color: #00ffcc;
+  width: 40px;
+}
+
+.ranking-name {
+  flex: 1;
+  color: #fff;
+}
+
+.ranking-count {
+  color: #aaa;
+  font-size: 0.85rem;
+}
